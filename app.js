@@ -33,7 +33,7 @@ var swiper = new Swiper('.swiper-container', {
 });
 
 
-const verMasLinks = document.querySelectorAll('.card-link a');
+const verMasLinks = document.querySelectorAll('.swiper-slide');
 let expandedContainer = null;
 
 verMasLinks.forEach(link => {
@@ -93,3 +93,5 @@ function closeExpandedImage() {
         }, 300); // Duración de la transición en milisegundos
     }
 }
+
+

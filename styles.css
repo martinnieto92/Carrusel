@@ -5,7 +5,9 @@
 }
 
 body {
-    background: #eee;
+    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5e2b01c6-e452-4dcf-b726-1a48161139b1/d925fxd-89d00dd4-3f92-4568-b4cd-676d21c66545.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzVlMmIwMWM2LWU0NTItNGRjZi1iNzI2LTFhNDgxNjExMzliMVwvZDkyNWZ4ZC04OWQwMGRkNC0zZjkyLTQ1NjgtYjRjZC02NzZkMjFjNjY1NDUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.UosH3nFngsEejAmw_OxOh45LhI-vwsqGD9FMO4OZetI');
+    background-size: 100% 100%; /* Ajusta el tamaño de la imagen de fondo */
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #000;
     display: flex;
@@ -15,37 +17,46 @@ body {
 }
 
 .container {
-    width: 90%;
-
-    padding: 10px 40px;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan en filas */
+    justify-content: space-between; /* Espacio entre las tarjetas */
 }
 
 .container .swiper-container {
     width: 100%;
-    height: 100%;
+    height: auto;
 }
 
 .container .swiper-slide {
+    color: white;
     position: relative;
     text-align: center;
     font-size: 18px;
-    background: #fff;
+    background: #0c0c0c;
     border-radius: 20px;
     text-align: start;
     box-shadow: 0px 4px 4px rgba(196, 196, 196, 0.25);
     transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
 }
 
 .container .swiper-slide:hover {
     /* Aplica el efecto de escalamiento en hover */
     transform: scale(1.05);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 4px 20px rgba(0, 16, 165, 0.753);
 }
 
 .container .swiper-slide img {
     display: block;
     width: 100%;
-    height: 290px;
+    height: auto; /* Imágenes se ajustarán automáticamente en altura */
+    max-height: 50%; /* Ajusta la altura máxima de la imagen */
     object-fit: cover;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -54,16 +65,40 @@ body {
 
 .container .swiper-slide .card-description {
     padding: 1rem 1rem;
+    height: 170px; /* Cambia este valor según tu necesidad */
+    display: flex;
+    flex-direction: column;
 }
 
-.container .swiper-slide .card-title,
-.container .swiper-slide .card-text {
-    margin-bottom: .5rem;
+.container .swiper-slide .card-title{
+    font-size: 29px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
+
+.container .swiper-slide .card-text {
+    margin-top: 10px; /* Elimina el margen superior */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea el texto en la parte superior */
+}
+
+.container .swiper-slide .card-text p {
+    margin-top: 0; /* Elimina el margen superior */
+    font-weight: normal;
+    transition: font-weight 0.3s ease, transform 0.3s ease;
+    text-align: top; /* Alinea el texto a la izquierda */
+}
+
+.container .swiper-slide .card-text p:hover {
+    font-weight: bold;
+    transform: scale(1.05);
+}
+/* Resto de las reglas CSS */
 
 .container .swiper-slide .card-link {
     text-align: center;
-
+    margin-top: auto; /* Empuja el enlace "Ver más" hacia la parte inferior */
 }
 
 .container .swiper-slide .card-link a {
@@ -140,4 +175,6 @@ body.zoomed {
     opacity: 1;
     pointer-events: auto;
 }
+
+
 
